@@ -1,8 +1,12 @@
+import csv 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.naive_bayes import CategoricalNB
 from sklearn.metrics import accuracy_score
+import pandas as pd
 
+
+df = pd.read_csv("/Users/jimmypostwala/Desktop/git_projects/naive_bayes/seasons_swimming_advisability_1000_rows.csv")
 
 encoder = LabelEncoder()
 df_encoded = df.apply(lambda col: encoder.fit_transform(col) if col.dtype == 'object' else col)
